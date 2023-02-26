@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    
+    <title>Home Page</title>
+</head>
+<body>
+    <div class="bg-black">
+        <div class="flex justify-between p-2"> 
+            <!-- Website Logo -->
+            <div class="mx-5 flex items-center">
+                <img src="./assets/logo.jpg" class="rounded-full w-14 h-14"> 
+                <h1 class="text-white mx-3">Tvacha</h1>
+            </div>
+
+            <div class="hidden md:flex items-center">
+                <!-- NavBar -->
+                <div class="mr-9">
+                    <ul class="flex space-x-9 text-white">
+                        <li class=" hover:text-green-500"><a href="#home" >Home</a></li>
+                        <li class=" hover:text-green-500"><a href="#about" >Book an Appointment</a></li>
+                        <li class=" hover:text-green-500"><a href="#Take Test" >Take The Test</a></li>
+                    </ul>
+                </div>
+                <!-- Login Button -->
+                <div>
+                    <button class="p-2 bg-green-400 rounded mr-5">Log In</button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center h-12 w-12">
+                <button class="p-2 bg-green-400 rounded mobile-menu-button">
+                    <img src="./assets/mobile-menu-icon.png" class="w-4 h-4">
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile NavBar -->
+        <div class="hidden mobile-menu md:hidden">
+            <ul class="bg-green-500 text-center py-1">
+                <li class="p-2 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="#about">Book an Appointment</a></li>
+                <li class="p-2 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="#home">Home</a></li>
+                <li class="p-2 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="#Take Test">Take Test</a></li>
+                <li class="p-2 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="#Login">Login</a></li>
+            </ul>
+        </div>
+
+        <script>
+            const btn = document.querySelector("button.mobile-menu-button");
+            const menu = document.querySelector(".mobile-menu");
+
+            btn.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+            });
+        </script>
+    </div>
+
+    <div class="w-full md:flex">
+        <div class="relative w-full">
+            <img src="./assets/home4.jpg" class="absolute h-full w-full " >
+            <div class="font-black relative w-16 h-16 p-2 md:top-60">
+                <h1 class="mb-2 font-extrabold">
+                    Know the root cause of your skin disease
+                </h1>
+                <button class="bg-black p-2 text-white rounded">
+                    Take The Test
+                </button>
+            </div>
+        </div>
+    
+        <div class="relative">
+            <img src="./assets/home3.jpg" class="w-full">
+        </div>
+    </div>  
+
+    <div class="text-black">
+        Hello World
+    </div>
+</body>
+</html>
