@@ -1,0 +1,83 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting. What are you looking for?",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "service",
+      "patterns": [
+        "What services do you have?",
+        "What kinds of services are there?",
+        "What do you sell?"
+      ],
+      "responses": [
+        "We provide healthcare service regarding skin disease specialists",
+        "We have coffee and tea"
+      ]
+    },
+    {
+      "tag": "payments",
+      "patterns": [
+        "Do you take credit cards?",
+        "Do you accept Mastercard?",
+        "Can I pay with Paypal?",
+        "Are you cash only?"
+      ],
+      "responses": [
+        "We accept VISA, Mastercard and Paypal",
+        "We accept most major credit cards, and Paypal"
+      ]
+    },
+    {
+      "tag": "scar",
+      "patterns": [
+        "How long does scars take to recover?",
+        "How long will it take to dissapear a scar due to cut?"
+      ],
+      "responses": [
+        "It depends on the deepness of the cut or wound, generally scars which are fresh and taken care properly with medicine disappears within a week or two.",
+        "It depends on type of scar, if it's deep visiting a doctor will help."
+      ]
+    },
+    {
+      "tag": "skin disease",
+      "patterns": [
+        "What kind of skin disese cause redness?",
+        "Tell me something how to treat redness of skin?",
+        "What should I do I am having skin disease?"
+      ],
+      "responses": [
+        "Recommended to look for a deratalogist, please go through our website. We would love to help you.",
+        "Please visit our website and visit a naerby dermatologist. We wish you a speedy recovery."
+      ]
+    }
+  ]
+}
