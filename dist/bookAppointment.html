@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Home Page</title>
+    <title>Book Appointment</title>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -23,7 +23,7 @@
                 <div class="mr-9">
                     <ul class="flex flex-row space-x-9 text-white">
                         <li class=" hover:text-green-500"><a href="./home.html" >Home</a></li>
-                        <li class=" hover:text-green-500"><a href="./bookAppointment.html" >Book an Appointment</a></li>
+                        <li class=" hover:text-green-500"><a href="#about" >Book an Appointment</a></li>
                         <li class=" hover:text-green-500"><a href="#Take Test" >Take The Test</a></li>
                     </ul>
                 </div>
@@ -61,7 +61,7 @@
         <div class="hidden mobile-menu md:hidden ">
             <ul class="bg-green-500 text-center py-1">
                 <li class="p-2 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="./home.html">Home</a></li>
-                <li class="p-2 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="./bookAppointment.html">Book an Appointment</a></li>
+                <li class="p-2 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="#about">Book an Appointment</a></li>
                 <li class="p-2 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="#Take Test">Take Test</a></li>
                 <li class="p-2 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="#Login">Login</a></li>
             </ul>
@@ -82,37 +82,55 @@
 
         </script>
     </nav>
-
-    
-
-    <!-- Section-1 -->
-    <div style="background-image: url('./assets/home4.jpg'); " class="w-full h-30">
-        
-    </div>
-
-    <div class="w-full md:flex">
-        <div style="background-image: url('./assets/home4.jpg');" class="w-full pl-4">
-            <div class="font-black relative w-52 h-16 p-2 md:top-60">
-                <h1 class="mb-2 font-extrabold">
-                    Know the root cause of your skin disease
-                </h1>
-                <button class="bg-black p-2 text-white rounded">
-                    Take The Test
-                </button>
+    <div class="bg-[rgba(162,218,220,255)] ">
+        <div class="flex flex-col md:flex-row">
+            <div class="flex flex-col p-28 w-full">
+                <label for="Name">Enter Name</label>
+                <input type="text" placeholder="eg: Rahul Sen" required class="rounded-lg">
+                <label for="Name" class="mt-2">Enter Age</label>
+                <input type="text" placeholder="eg: 30" required class="rounded-lg">
+                <button class="text-center bg-green-400 rounded mt-4 w-40 ml-32 p-2 font-semibold">Book Appointment</button>
+            </div>
+            <div class="w-full  p-2 flex flex-row justify-center">
+                <img src="./assets/appointment.jpg" alt="" class="w-96 h-96">
             </div>
         </div>
-    
-        <div  class="w-full">
-            <img src="./assets/home3.jpg" alt="">
-        </div>
-    </div>  
-
-    
-
-    <div class=" w-full">
-        <h1 class="font-extrabold text-center md:text-3xl">Skin Diseases has Multiple Causes</h1>
-        <img src="./assets/skinProblemsCause.jpg" alt="">
     </div>
+
+    <div class="bg-[rgba(162,218,220,255)] flex flex-row justify-center">
+        <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6">
+            <h5 class="mb-3 font-semibold text-black md:text-xl ">
+                Previous Booking
+            </h5>
+            <p class="text-sm font-normal text-gray-500">View your previous appointment here.</p>
+            <ul class="my-4 space-y-3">
+                <li>
+                    <div class="rounded-lg bg-gray-600 hover:shadow flex items-center justify-between p-3 font-bold">
+                        <span class="text-white">Dr. Ashwin Sanghi</span>
+                        <span class="text-white">03:00pm</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="rounded-lg bg-gray-600 hover:shadow flex items-center justify-between p-3 font-bold">
+                        <span class="text-white">Dr. Vasant Patil</span>
+                        <span class="text-white">05:00pm</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="rounded-lg bg-gray-600 hover:shadow flex items-center justify-between p-3 font-bold">
+                        <span class="text-white">Dr. Ram Prasad</span>
+                        <span class="text-white">07:00pm</span>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="bg-[rgba(162,218,220,255)]">
+        .
+    </div>
+    
 
     <!-- Footer -->
     <footer class="p-4 sm:p-6 bg-black">
@@ -187,8 +205,6 @@
             </div>
         </div>
     </footer>
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
 </body>
