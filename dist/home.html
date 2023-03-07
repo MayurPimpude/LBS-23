@@ -7,9 +7,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Home Page</title>
+    <style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!------------------------------ Navigation Bar ------------------------------------->
     <nav class="bg-black">
         <div class="flex flex-row justify-between p-2"> 
             <!-- Website Logo -->
@@ -23,7 +28,7 @@
                 <div class="mr-9">
                     <ul class="flex flex-row space-x-9 text-white">
                         <li class=" hover:text-green-500"><a href="./home.html" >Home</a></li>
-                        <li class=" hover:text-green-500"><a href="./bookAppointment.html" >Book an Appointment</a></li>
+                        <li class=" hover:text-green-500"><a href="./bookAppointment.html">Book an Appointment</a></li>
                         <li class=" hover:text-green-500"><a href="#Take Test" >Take The Test</a></li>
                     </ul>
                 </div>
@@ -34,7 +39,7 @@
                         <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <!-- Dropdown menu -->
-                    <div id="dropdown"class="absolute hidden right-0 m-2 rounded bg-green-400">
+                    <div id="dropdown"class="absolute hidden  m-2 rounded bg-green-400">
                         <ul class="py-1 text-sm" aria-labelledby="dropdownDefaultButton">
                         <li>
                             <a href="#" class="block px-4 py-2 text-black">Doctor Login</a>
@@ -78,43 +83,318 @@
             dropdownBtn.addEventListener("click", ()=>{
                 dropdownMenu.classList.toggle("hidden");
             })
-
-
         </script>
     </nav>
 
-    
 
-    <!-- Section-1 -->
+    <!------------------------------------------------ Section-1 ----------------------------------------------->
     <div style="background-image: url('./assets/home4.jpg'); " class="w-full h-30">
         
     </div>
-
-    <div class="w-full md:flex">
+    <div class="w-full flex flex-col md:flex-row">
         <div style="background-image: url('./assets/home4.jpg');" class="w-full pl-4">
-            <div class="font-black relative w-52 h-16 p-2 md:top-60">
-                <h1 class="mb-2 font-extrabold">
+            <div class="font-black relative w-52 h-16 p-2 md:top-36">
+                <h1 class="mb-2 font-extrabold text-xl xs:w-40 sm:w-96 md:text-5xl md:w-96">
                     Know the root cause of your skin disease
                 </h1>
-                <button class="bg-black p-2 text-white rounded">
+                <hr class="w-36 h-1  my-3 bg-black border-0 rounded md:my-4">
+                <button class="bg-black p-3 text-white rounded">
                     Take The Test
                 </button>
             </div>
         </div>
-    
         <div  class="w-full">
             <img src="./assets/home3.jpg" alt="">
         </div>
     </div>  
 
-    
-
-    <div class=" w-full">
+    <!-------------------------------------------- Section-2 ----------------------------------------->
+    <div id="default-carousel" class="relative md:hidden mt-10" data-carousel="slide">
+        <div class="relative h-64 overflow-hidden rounded-lg">
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <div class="flex flex-col items-center">
+                    <img src="./assets/Nutrition.jpg" class="absolute block h-32 w-32 top-24 -translate-x-1/2 -translate-y-1/2 left-1/2" alt="...">
+                    <h1 class="absolute text-xl font-bold">Nutrition</h1>
+                    <p class="absolute top-40 text-center font-semibold">Nutrient deficiencies result from poor <br>diet or a compromised gut microbiome.</p>
+                </div>
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <div class="flex flex-col items-center">
+                    <img src="./assets/Metabolism.jpg" class="absolute block h-32 w-32 top-24 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <h1 class="absolute text-xl font-bold">Metabolism</h1>
+                    <p class="absolute top-40 text-center font-semibold">Influenced by inflamation, highglycemic<br> diet and thyroid issues.</p>
+                </div>
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <div class="flex flex-col items-center">
+                    <img src="./assets/hormones.jpg" class="absolute block h-32 w-32 top-24 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <h1 class="absolute text-xl font-bold">Hormones</h1>
+                    <p class="absolute top-40 text-center font-semibold">DHT sensitivity can be caused by genetics, <br>stress, meds, poor diet and toxins.</p>
+                </div>
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <div class="flex flex-col items-center">
+                    <img src="./assets/stress.jpg" class="absolute block h-32 w-32 top-24 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <h1 class="absolute text-xl font-bold">Stress</h1>
+                    <p class="absolute top-40 text-center font-semibold">Short term or chronic, physical or emotional <br>stress like a surgery or demanding job.</p>
+                </div>
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <div class="flex flex-col items-center">
+                    <img src="./assets/Environment.jpg" class="absolute block h-32 w-32 top-24 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <h1 class="absolute text-xl font-bold">Environment</h1>
+                    <p class="absolute top-40 text-center font-semibold">Refers to your surroundings, the product <br>you use and the foods that you eat.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Slider indicators -->
+        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+    <div class="hidden md:block w-full mt-10">
         <h1 class="font-extrabold text-center md:text-3xl">Skin Diseases has Multiple Causes</h1>
         <img src="./assets/skinProblemsCause.jpg" alt="">
     </div>
 
-    <!-- Footer -->
+    <!-------------------------------------------- Section-3 ----------------------------------------->
+    <h1 class="text-center font-extrabold text-3xl mt-10">The Journey</h1>
+    <div class="m-5 flex flex-col justify-center md:flex-row gap-10">
+        <div class="p-5 rounded-xl flex flex-row justify-between md:flex-col shadow-2xl">
+            <div class="flex flex-col md:gap-8">
+                <div class="font-extrabold text-2xl">Take the Test</div>
+                <div class="font-semibold text-lg">An online test that accesses <br>the root cause of your skin <br>disease</div>
+            </div>
+            <div class="flex flex-col justify-between items-center md:flex-row">
+                <div class=""><img class="rounded-full w-28 h-24 p-3" src="./assets/test.jpg" alt=""></div>
+                <div class="font-semibold text-xl">Step 1</div>
+            </div>
+        </div>
+        <div class="p-5 rounded-xl flex flex-row justify-between md:flex-col  shadow-2xl">
+            <div class="flex flex-col md:gap-1">
+                <div class="font-extrabold text-2xl">Book <br>Appointment</div>
+                <div class="font-semibold text-lg">Understand your skin disease <br>and take doctors plan</div>
+            </div>
+            <div class="flex flex-col justify-between items-center md:flex-row">
+                <div class=""><img class="rounded-full w-28 h-24 p-3" src="./assets/doctor.png" alt=""></div>
+                <div class="font-semibold text-xl">Step 2</div>
+            </div>
+        </div>
+        <div class="p-5 rounded-xl flex flex-row justify-between md:flex-col shadow-2xl">
+            <div class="flex flex-col md:gap-1">
+                <div class="font-extrabold text-2xl">Start Healing <br>the Skin</div>
+                <div class="font-semibold text-lg">Take Medicine and <br>follow the doctors plan</div>
+            </div>
+            <div class="flex flex-col justify-between items-center md:flex-row">
+                <div class=""><img class="rounded-full w-28 h-24 p-3" src="./assets/medicine.jpg" alt=""></div>
+                <div class="font-semibold text-xl">Step 3</div>
+            </div>
+        </div>
+    </div>
+
+    <!-------------------------------------------- Section-4 ----------------------------------------->
+    <div style="overflow: hidden; overflow-x: auto; " class="scrollbar-hide m-10">
+        <div class="flex flex-row md:gap-5">
+            <div class="p-2">
+                <iframe width="300" 
+                        height="200" 
+                        class="rounded-lg"
+                        src="https://www.youtube.com/embed/zQGOcOUBi6s" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>         
+            </div>
+            <div class="p-2">
+                <iframe width="300" 
+                        height="200" 
+                        class="rounded-lg "
+                        src="https://www.youtube.com/embed/ryox2SQKQPU" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="p-2">
+                <iframe width="300" 
+                        height="200" 
+                        class="rounded-lg"
+                        src="https://www.youtube.com/embed/Qa7WrWNmXug" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="p-2">
+                <iframe width="300" 
+                        height="200" 
+                        class="rounded-lg"
+                        src="https://www.youtube.com/embed/_VhcZTGv0CU" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="p-2">
+                <iframe width="300" 
+                        height="200" 
+                        class="rounded-lg"
+                        src="https://www.youtube.com/embed/Dx3iF8-nmkM" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="p-2">
+                <iframe width="300" 
+                        height="200" 
+                        class="rounded-lg"
+                        src="https://www.youtube.com/embed/oXKRCG-3z9k" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>            
+            </div>
+            
+        </div>
+    </div>
+    
+    <!---------------------------------------- Donation Section --------------------------------------->
+    <section class="container mx-auto p-10 md:py-20 px-0 md:p-10 md:px-0">
+        <section class="p-5 md:p-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10">
+            <article class="p-10 min-h-116 max-w-xl w-full bg-gray-200 rounded-xl text-gray-600 transform duration-500 hover:-translate-y-1 cursor-pointer">
+                <h1 class="mt-5 text-2xl md:text-3xl font-light leading-snug min-h-33">One small step for man one giant leap for mankind
+                </h1>
+                <div class="mt-20">
+                    <span class="text-xl">Moonlanding - </span>
+                    <span class="font-bold text-xl">Neil Armstrong</span>
+                </div>
+                <div class="mt-16 flex justify-between">
+                    <span class="p-3 pl-0 font-bold">Story</span>
+                    <span class="p-3  border-2 border-gray-500 rounded-md text-base hover:bg-black hover:border-gray-200 cursor-pointer hover:text-white ">Paid
+            Membership</span>
+                </div>
+            </article>
+            <article class="min-h-116 bg-orange-600 max-w-xl w-full rounded-xl text-gray-100 bg-cover bg-center transform duration-500 hover:-translate-y-1 cursor-pointer" style="background-image: url(https://images.unsplash.com/photo-1614527333177-d27e9e29ff98?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=950&q=80);">
+                <div class="bg-black bg-opacity-60 p-10 rounded-xl h-full">
+                    <h1 class="mt-5 text-3xl text-gray-100 leading-snug  min-h-33">One small step for man one giant leap for mankind
+                    </h1>
+                    <div class="mt-20">
+                        <span class="text-xl">Moonlanding - </span>
+                        <span class="font-bold text-xl">Neil Armstrong</span>
+                    </div>
+                    <div class="mt-16 flex justify-between ">
+                        <span class="p-3 pl-0 font-bold">Travel</span>
+                        <span class="p-3  border-2 border-gray-200 rounded-md text-base hover:bg-gray-200 hover:border-gray-200 cursor-pointer hover:text-black ">Paid
+            Membership</span>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </section>
+
+
+    <!------------------------------------------------- ChatBot ----------------------------------------------->
+    <button onclick="buttonHandler()" id="chatButton" title="Chat Bot"
+        class="fixed z-90 bottom-10 right-8 bg-blue-600 w-20 h-20 rounded-full drop-shadow-lg flex justify-center items-center text-white text-4xl hover:bg-blue-700 hover:drop-shadow-2xl hover:animate-bounce duration-300">
+        <img src="./assets/chatbot.jpg" alt="chatbot" class="rounded-full">
+        <a href="./bookAppointment.html" ></a>
+    </button>
+    <script>
+        // Do something when the button is clicked
+        function buttonHandler() {
+            // window.location.href = "./bookAppointment.html"
+            const chatBtn = document.querySelector("#chatButton")
+            const backBtn = document.querySelector("#backButton")
+            const chat = document.querySelector("#default-sidebar")
+            
+            chatBtn.addEventListener("click", () => {
+                chat.classList.toggle("hidden");
+            });
+            backBtn.addEventListener("click",()=>{
+                chat.classList.toggle("hidden");
+            })
+            
+        }   
+    </script>
+
+    
+    <aside id="default-sidebar" class="hidden fixed top-0 left-0 z-40 w-64 h-screen transition-transform sm:translate-x-0" aria-label="Sidebar">
+        <div class="h-full px-3 py-4 overflow-y-auto bg-[rgba(162,218,220,255)]">
+            <div class="mb-2"> 
+                <div class="flex flex-row">
+                    <button id="backButton" onclick="buttonHandler()">
+                        <img  class="rounded-full w-6 h-6" src="./assets/backBtn.jpg" alt="">
+                    </button>
+                    <h1 class="ml-2">Back</h1>
+                </div>
+            </div>
+
+            <div class="relative w-full p-6 overflow-y-auto h-[470px] border-2 border-black">
+              <ul class="space-y-2">
+                <li class="flex justify-start">
+                  <div class="relative max-w-xl px-4 py-2 text-white bg-black rounded shadow">
+                    <span class="block">Hi</span>
+                  </div>
+                </li>
+                <li class="flex justify-end">
+                  <div class="relative max-w-xl px-4 py-2 text-black bg-white rounded shadow">
+                    <span class="block">Hiiii</span>
+                  </div>
+                </li>
+                <li class="flex justify-end">
+                  <div class="relative max-w-xl px-4 py-2 text-black bg-white rounded shadow">
+                    <span class="block">how are you?</span>
+                  </div>
+                </li>
+                <li class="flex justify-start">
+                  <div class="relative max-w-xl px-4 py-2 text-white bg-black rounded shadow">
+                    <span class="block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="flex items-center justify-between w-full p-3 border-t border-gray-300">
+                <input type="text" placeholder="Message"
+                  class="block w-full py-2 pl-4 mx-3 bg-gray-100 rounded-full outline-none focus:text-gray-700"
+                  name="message" required />
+                <button type="submit">
+                  <svg class="w-5 h-5 text-gray-500 origin-center transform rotate-90" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                      d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                  </svg>
+                </button>
+            </div>    
+        </div>
+    </aside>
+
+
+    <!------------------------------------------------- Footer ----------------------------------------------------->
     <footer class="p-4 sm:p-6 bg-black">
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
