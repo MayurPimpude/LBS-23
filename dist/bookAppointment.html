@@ -9,79 +9,77 @@
     <title>Book Appointment</title>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="bg-black">
-        <div class="flex flex-row justify-between p-2"> 
-            <!-- Website Logo -->
-            <div class="mx-5 flex flex-row items-center">
-                <img src="./assets/logo.jpg" class="rounded-full w-14 h-14"> 
-                <h1 class="text-white mx-3">Tvacha</h1>
-            </div>
+<!------------------------------ Navigation Bar ------------------------------------->
+<nav class="bg-black">
+    <div class="flex flex-row justify-between p-2"> 
+        <!-- Website Logo -->
+        <div class="mx-5 flex flex-row items-center">
+            <img src="./assets/logo.jpg" class="rounded-full w-14 h-14"> 
+            <h1 class="text-white mx-3">Tvacha</h1>
+        </div>
 
-            <div class="hidden md:flex flex-row items-center">
-                <!-- NavBar -->
-                <div class="mr-9">
-                    <ul class="flex flex-row space-x-9 text-white">
-                        <li class=" hover:text-green-500"><a href="./home.html" >Home</a></li>
-                        <li class=" hover:text-green-500"><a href="#about" >Book an Appointment</a></li>
-                        <li class=" hover:text-green-500"><a href="#Take Test" >Take The Test</a></li>
+        <div class="hidden md:flex flex-row items-center">
+            <!-- NavBar -->
+            <div class="mr-9">
+                <ul class="flex flex-row space-x-9 text-white">
+                    <li class="p-2 rounded hover:bg-green-400 hover:text-black"><a href="./home.html" >Home</a></li>
+                    <li class="p-2 rounded hover:bg-green-400 hover:text-black"><a href="./bookAppointment.html">Book an Appointment</a></li>
+                    <li class="p-2 rounded hover:bg-green-400 hover:text-black"><a href="#Take Test" >Take The Test</a></li>
+                </ul>
+            </div>
+            <!-- Login Button -->
+            <div>
+                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="hover:text-white text-black bg-green-400  font-medium rounded p-2 text-center inline-flex items-center " >
+                    Login 
+                    <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div id="dropdown"class="absolute hidden mt-2 rounded bg-green-400">
+                    <ul class="py-1 text-sm" aria-labelledby="dropdownDefaultButton">
+                    <li>
+                        <a href="#" class="hover:text-white block px-4 py-2 text-black">Doctor Login</a>
+                    </li>
+                    <hr>
+                    <li>
+                        <a href="#" class="hover:text-white block px-4 py-2 text-black">User Login</a>
+                    </li>
                     </ul>
                 </div>
-                <!-- Login Button -->
-                <div>
-                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-black bg-green-400  font-medium rounded p-2 text-center inline-flex items-center " >
-                        Login 
-                        <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <!-- Dropdown menu -->
-                    <div id="dropdown"class="absolute hidden m-2 rounded bg-green-400">
-                        <ul class="py-1 text-sm" aria-labelledby="dropdownDefaultButton">
-                        <li>
-                            <a href="#" class="block px-4 py-2 text-black">Doctor Login</a>
-                        </li>
-                        <hr>
-                        <li>
-                            <a href="#" class="block px-4 py-2 text-black">User Login</a>
-                        </li>
-                        </ul>
-                    </div>
-                </div>
-
             </div>
 
-            <!-- Mobile Menu Button -->
-            <div class="md:hidden flex flex-row items-center h-12 w-12">
-                <button class="p-2 bg-green-400 rounded mobile-menu-button">
-                    <img src="./assets/mobile-menu-icon.png" class="w-4 h-4">
-                </button>
-            </div>
         </div>
 
-        <!-- Mobile NavBar -->
-        <div class="hidden mobile-menu md:hidden ">
-            <ul class="bg-green-500 text-center py-1">
-                <li class="p-2 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="./home.html">Home</a></li>
-                <li class="p-2 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="#about">Book an Appointment</a></li>
-                <li class="p-2 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="#Take Test">Take Test</a></li>
-                <li class="p-2 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="#Login">Login</a></li>
-            </ul>
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex flex-row items-center h-12 w-12">
+            <button class="p-2 bg-green-400 rounded mobile-menu-button">
+                <img src="./assets/mobile-menu-icon.png" class="w-4 h-4">
+            </button>
         </div>
+    </div>
 
-        <script>
-            const btn = document.querySelector("button.mobile-menu-button");
-            const menu = document.querySelector(".mobile-menu");
-            const dropdownBtn = document.querySelector("#dropdownDefaultButton");
-            const dropdownMenu = document.querySelector("#dropdown");
-            btn.addEventListener("click", () => {
-                menu.classList.toggle("hidden");
-            });
-            dropdownBtn.addEventListener("click", ()=>{
-                dropdownMenu.classList.toggle("hidden");
-            })
+    <!-- Mobile NavBar -->
+    <div class="hidden mobile-menu md:hidden bg-green-500" >
+        <ul class=" text-center py-1">
+            <li class="p-2 ml-12 mr-12 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="./home.html">Home</a></li>
+            <li class="p-2 ml-12 mr-12 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="./bookAppointment.html">Book an Appointment</a></li>
+            <li class="p-2 ml-12 mr-12 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="#Take Test">Take Test</a></li>
+            <li class="p-2 ml-12 mr-12 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="#Login">Login</a></li>
+        </ul>
+    </div>
 
-
-        </script>
-    </nav>
+    <script>
+        const btn = document.querySelector("button.mobile-menu-button");
+        const menu = document.querySelector(".mobile-menu");
+        const dropdownBtn = document.querySelector("#dropdownDefaultButton");
+        const dropdownMenu = document.querySelector("#dropdown");
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+        dropdownBtn.addEventListener("click", ()=>{
+            dropdownMenu.classList.toggle("hidden");
+        })
+    </script>
+</nav>
 
     <div class="bg-[rgba(162,218,220,255)]  w-full h-30">
         
@@ -89,12 +87,12 @@
 
     <div class="bg-[rgba(162,218,220,255)] ">
         <div class="flex flex-col md:flex-row">
-            <div class="flex flex-col p-28 w-full">
+            <div class="flex flex-col justify-center items-center w-full">
                 <label for="Name">Enter Name</label>
                 <input type="text" placeholder="eg: Rahul Sen" required class="rounded-lg">
                 <label for="Name" class="mt-2">Enter Age</label>
                 <input type="text" placeholder="eg: 30" required class="rounded-lg">
-                <button class="text-center bg-green-400 rounded mt-4 w-40 ml-32 p-2 font-semibold">Book Appointment</button>
+                <button class="text-center bg-green-400 rounded mt-6 w-40 p-2 font-semibold">Book Appointment</button>
             </div>
             <div class="w-full  p-2 flex flex-row justify-center">
                 <img src="./assets/appointment.jpg" alt="" class="w-96 h-96">
@@ -137,7 +135,7 @@
     </div>
     
 
-    <!-- Footer -->
+    <!------------------------------------------------- Footer ----------------------------------------------------->
     <footer class="p-4 sm:p-6 bg-black">
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
@@ -154,18 +152,18 @@
                             <a href="https://flowbite.com/" class="hover:underline">Access</a>
                         </li>
                         <li>
-                            <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                            <a href="https://tailwindcss.com/" class="hover:underline">Tests</a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact us</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
-                            <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
+                            <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Whatsapp</a>
                         </li>
                         <li>
-                            <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
+                            <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Gamil</a>
                         </li>
                     </ul>
                 </div>
@@ -210,6 +208,7 @@
             </div>
         </div>
     </footer>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
 </body>

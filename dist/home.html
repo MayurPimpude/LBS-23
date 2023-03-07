@@ -27,26 +27,26 @@
                 <!-- NavBar -->
                 <div class="mr-9">
                     <ul class="flex flex-row space-x-9 text-white">
-                        <li class=" hover:text-green-500"><a href="./home.html" >Home</a></li>
-                        <li class=" hover:text-green-500"><a href="./bookAppointment.html">Book an Appointment</a></li>
-                        <li class=" hover:text-green-500"><a href="#Take Test" >Take The Test</a></li>
+                        <li class="p-2 rounded hover:bg-green-400 hover:text-black"><a href="./home.html" >Home</a></li>
+                        <li class="p-2 rounded hover:bg-green-400 hover:text-black"><a href="./bookAppointment.html">Book an Appointment</a></li>
+                        <li class="p-2 rounded hover:bg-green-400 hover:text-black"><a href="#Take Test" >Take The Test</a></li>
                     </ul>
                 </div>
                 <!-- Login Button -->
                 <div>
-                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-black bg-green-400  font-medium rounded p-2 text-center inline-flex items-center " >
+                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="hover:text-white text-black bg-green-400  font-medium rounded p-2 text-center inline-flex items-center " >
                         Login 
                         <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <!-- Dropdown menu -->
-                    <div id="dropdown"class="absolute hidden  m-2 rounded bg-green-400">
+                    <div id="dropdown"class="absolute hidden mt-2 rounded bg-green-400">
                         <ul class="py-1 text-sm" aria-labelledby="dropdownDefaultButton">
                         <li>
-                            <a href="#" class="block px-4 py-2 text-black">Doctor Login</a>
+                            <a href="#" class="hover:text-white block px-4 py-2 text-black">Doctor Login</a>
                         </li>
                         <hr>
                         <li>
-                            <a href="#" class="block px-4 py-2 text-black">User Login</a>
+                            <a href="#" class="hover:text-white block px-4 py-2 text-black">User Login</a>
                         </li>
                         </ul>
                     </div>
@@ -63,12 +63,12 @@
         </div>
 
         <!-- Mobile NavBar -->
-        <div class="hidden mobile-menu md:hidden ">
-            <ul class="bg-green-500 text-center py-1">
-                <li class="p-2 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="./home.html">Home</a></li>
-                <li class="p-2 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="./bookAppointment.html">Book an Appointment</a></li>
-                <li class="p-2 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="#Take Test">Take Test</a></li>
-                <li class="p-2 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="#Login">Login</a></li>
+        <div class="hidden mobile-menu md:hidden bg-green-500">
+            <ul class=" text-center py-1">
+                <li class="p-2 ml-12 mr-12 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="./home.html">Home</a></li>
+                <li class="p-2 ml-12 mr-12 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="./bookAppointment.html">Book an Appointment</a></li>
+                <li class="p-2 ml-12 mr-12 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="#Take Test">Take Test</a></li>
+                <li class="p-2 ml-12 mr-12 bg-black m-1 rounded"><a class=" text-white hover:text-green-500" href="#Login">Login</a></li>
             </ul>
         </div>
 
@@ -88,17 +88,14 @@
 
 
     <!------------------------------------------------ Section-1 ----------------------------------------------->
-    <div style="background-image: url('./assets/home4.jpg'); " class="w-full h-30">
-        
-    </div>
     <div class="w-full flex flex-col md:flex-row">
         <div style="background-image: url('./assets/home4.jpg');" class="w-full pl-4">
-            <div class="font-black relative w-52 h-16 p-2 md:top-36">
+            <div class="font-black relative w-52 h-16 p-2 md:top-32">
                 <h1 class="mb-2 font-extrabold text-xl xs:w-40 sm:w-96 md:text-5xl md:w-96">
                     Know the root cause of your skin disease
                 </h1>
                 <hr class="w-36 h-1  my-3 bg-black border-0 rounded md:my-4">
-                <button class="bg-black p-3 text-white rounded">
+                <button class="bg-black p-3 text-white rounded hover:bg-gray-200 hover:text-black">
                     Take The Test
                 </button>
             </div>
@@ -109,6 +106,7 @@
     </div>  
 
     <!-------------------------------------------- Section-2 ----------------------------------------->
+    <!-- For Small Screens => Slider -->
     <div id="default-carousel" class="relative md:hidden mt-10" data-carousel="slide">
         <div class="relative h-64 overflow-hidden rounded-lg">
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
@@ -169,12 +167,13 @@
             </span>
         </button>
     </div>
+    <!-- For Large Screens => Image -->
     <div class="hidden md:block w-full mt-10">
         <h1 class="font-extrabold text-center md:text-3xl">Skin Diseases has Multiple Causes</h1>
         <img src="./assets/skinProblemsCause.jpg" alt="">
     </div>
 
-    <!-------------------------------------------- Section-3 ----------------------------------------->
+    <!-------------------------------------------- Journey Section ----------------------------------------->
     <h1 class="text-center font-extrabold text-3xl mt-10">The Journey</h1>
     <div class="m-5 flex flex-col justify-center md:flex-row gap-10">
         <div class="p-5 rounded-xl flex flex-row justify-between md:flex-col shadow-2xl">
@@ -209,9 +208,70 @@
         </div>
     </div>
 
-    <!-------------------------------------------- Section-4 ----------------------------------------->
-    <div style="overflow: hidden; overflow-x: auto; " class="scrollbar-hide m-10">
-        <div class="flex flex-row md:gap-5">
+    <!-------------------------------------------- Threefold Way Section ----------------------------------------->
+    <div class="flex flex-col justify-center items-center w-full">
+        <h1 class="text-center font-extrabold text-4xl mt-10">The Threefold Way</h1>
+        <p class="text-center font-semibold text-xl mt-10">Summon Everyone in one Platform</p>
+        <h1 class="text-center font-semibold text-2xl mt-8"> Docotors <span class="text-green-500">+</span> Patients <span class="text-green-500">+</span> Donators </h1>
+        <p class="text-center font-semibold text-xl m-10 p-4 md:w-1/2  md:h-20">Our Platform brings together all the three parties together which makes the process of treatment seamless.</p>
+    </div>
+
+    
+    <!---------------------------------------- Donation Section --------------------------------------->
+    <h1 class="mt-10 text-center font-extrabold text-black text-3xl">DONATE</h1>
+    <section class="container mx-auto p-10 md:py-10 px-0 md:p-10 md:px-0">
+        <section class="p-5 md:p-0 flex flex-col justify-around gap-10 md:flex-row">
+            <!-- First Card -->
+            <article  class="min-h-116 max-w-xl w-full rounded-xl transform duration-500 hover:-translate-y-1 cursor-pointer shadow-lg">
+               <img class="max-w-xl w-full h-full p-0 m-0 rounded-xl" src="./assets/donation.jpg" alt="">
+            </article>
+            <!-- Second Card -->
+            <article class="min-h-116 bg-orange-600 max-w-xl w-full rounded-xl text-gray-100 bg-cover bg-center transform duration-500 hover:-translate-y-1 cursor-pointer shadow-lg" style="background-image: url(./assets/donation2.jpg);">
+                <div class="bg-black bg-opacity-60 p-10 rounded-xl h-full">
+                    <h1 class="mt-5 text-3xl text-gray-100 leading-snug  min-h-33">Alone we can do so little; together we can do so much
+                    </h1>
+                    <div class="ml-20 mt-10">
+                        <span class="text-xl">-</span>
+                        <span class="font-bold text-xl">HELEN KELLER</span>
+                    </div>
+                    <div class="mt-16 flex justify-between ">
+                        <span class="p-3 pl-0 font-bold"></span>
+                        <div class="p-3 border-2 border-gray-200 rounded-md text-base bg-green-400 text-black hover:bg-gray-200 hover:border-gray-200 cursor-pointer hover:text-black"><a href="#Donate">Donate Now</a></div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </section>
+
+    <!------------------------------------ News Letter ------------------------------------->
+    <h1 class="mt-10 text-center font-extrabold text-black text-3xl">Subscribe to our News Letter</h1>
+    <div class="flex flex-col-reverse justify-between items-center md:flex-row">
+        <!-- News Letter Subscription Card -->
+        <div class="flex justify-center items-center flex-wrap mt-5 w-full h-96">
+            <div class="m-3 py-10 px-10 bg-gray-800 rounded inline-block h-fit">
+                <p class="text-white font-bold text-sm">Join our newsletter</p>
+                <div class="flex justify-between mb-3">
+                    <input class="mr-3 shadow-inner text-white rounded px-3 text-sm bg-gray-900 border-b border-gray-700" placeholder="Enter your email" type="text">
+                    <button class="shadow-lg bg-blue-600 text-white font-bold text-sm rounded px-3 py-2">Subscribe</button>
+                </div>
+                <label class="text-sm text-white mt-3 block">
+                    <div class="inline-block bg-gray-900 shadow-inner border-b border-gray-700 rounded h-4 w-4">
+                        <input class="appearance-none" type="checkbox">
+                    </div>
+                <span class="">send me occasional promotional emails</span>
+                </label>
+            </div>
+        </div>
+        <!-- News Letter Sample Image -->
+        <div class="w-fit h-96 mt-10 md:m-20 md:w-1/2 md:h-1/2 flex flex-row justify-center rounded-lg shadow-xl" style="background-image: url(./assets/grey.jpg);">
+            <img class="w-96 h-96 p-5" src="./assets/newsletter.jpg" alt="">
+        </div>
+    </div>
+
+
+    <!-------------------------------------------- Youtube Video Section ----------------------------------------->
+    <div style="overflow: hidden; overflow-x: auto; " class="scrollbar-hide ">
+        <div class="flex flex-row md:gap-5 m-10 ml-2">
             <div class="p-2">
                 <iframe width="300" 
                         height="200" 
@@ -281,40 +341,6 @@
             
         </div>
     </div>
-    
-    <!---------------------------------------- Donation Section --------------------------------------->
-    <section class="container mx-auto p-10 md:py-20 px-0 md:p-10 md:px-0">
-        <section class="p-5 md:p-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10">
-            <article class="p-10 min-h-116 max-w-xl w-full bg-gray-200 rounded-xl text-gray-600 transform duration-500 hover:-translate-y-1 cursor-pointer">
-                <h1 class="mt-5 text-2xl md:text-3xl font-light leading-snug min-h-33">One small step for man one giant leap for mankind
-                </h1>
-                <div class="mt-20">
-                    <span class="text-xl">Moonlanding - </span>
-                    <span class="font-bold text-xl">Neil Armstrong</span>
-                </div>
-                <div class="mt-16 flex justify-between">
-                    <span class="p-3 pl-0 font-bold">Story</span>
-                    <span class="p-3  border-2 border-gray-500 rounded-md text-base hover:bg-black hover:border-gray-200 cursor-pointer hover:text-white ">Paid
-            Membership</span>
-                </div>
-            </article>
-            <article class="min-h-116 bg-orange-600 max-w-xl w-full rounded-xl text-gray-100 bg-cover bg-center transform duration-500 hover:-translate-y-1 cursor-pointer" style="background-image: url(https://images.unsplash.com/photo-1614527333177-d27e9e29ff98?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=950&q=80);">
-                <div class="bg-black bg-opacity-60 p-10 rounded-xl h-full">
-                    <h1 class="mt-5 text-3xl text-gray-100 leading-snug  min-h-33">One small step for man one giant leap for mankind
-                    </h1>
-                    <div class="mt-20">
-                        <span class="text-xl">Moonlanding - </span>
-                        <span class="font-bold text-xl">Neil Armstrong</span>
-                    </div>
-                    <div class="mt-16 flex justify-between ">
-                        <span class="p-3 pl-0 font-bold">Travel</span>
-                        <span class="p-3  border-2 border-gray-200 rounded-md text-base hover:bg-gray-200 hover:border-gray-200 cursor-pointer hover:text-black ">Paid
-            Membership</span>
-                    </div>
-                </div>
-            </article>
-        </section>
-    </section>
 
 
     <!------------------------------------------------- ChatBot ----------------------------------------------->
@@ -331,9 +357,11 @@
             const backBtn = document.querySelector("#backButton")
             const chat = document.querySelector("#default-sidebar")
             
+            //For Chat Bot Button
             chatBtn.addEventListener("click", () => {
                 chat.classList.toggle("hidden");
             });
+            //For Back Button
             backBtn.addEventListener("click",()=>{
                 chat.classList.toggle("hidden");
             })
@@ -341,15 +369,20 @@
         }   
     </script>
 
-    
+    <!-- Chat Bot Section -->
     <aside id="default-sidebar" class="hidden fixed top-0 left-0 z-40 w-64 h-screen transition-transform sm:translate-x-0" aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto bg-[rgba(162,218,220,255)]">
             <div class="mb-2"> 
-                <div class="flex flex-row">
-                    <button id="backButton" onclick="buttonHandler()">
-                        <img  class="rounded-full w-6 h-6" src="./assets/backBtn.jpg" alt="">
-                    </button>
-                    <h1 class="ml-2">Back</h1>
+                <div class="flex flex-row justify-between">
+                    <div class="flex flex-row">
+                        <button id="backButton" onclick="buttonHandler()">
+                            <img  class="rounded-full w-6 h-6" src="./assets/backBtn.jpg" alt="">
+                        </button>
+                        <h1 class="ml-2">Back</h1>
+                    </div>
+                    <div>
+                        CHAT BOT
+                    </div>
                 </div>
             </div>
 
@@ -411,18 +444,18 @@
                             <a href="https://flowbite.com/" class="hover:underline">Access</a>
                         </li>
                         <li>
-                            <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                            <a href="https://tailwindcss.com/" class="hover:underline">Tests</a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact us</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
-                            <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
+                            <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Whatsapp</a>
                         </li>
                         <li>
-                            <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
+                            <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Gamil</a>
                         </li>
                     </ul>
                 </div>
