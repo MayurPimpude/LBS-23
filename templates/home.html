@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Home Page</title>
+
+</head>
+<body>
+    <!------------------------------ Navigation Bar ------------------------------------->
+    <nav class="bg-[#f56556]">
+        <div class="flex flex-row justify-between p-2"> 
+            <!-- Website Logo -->
+            <div class="mx-5 flex flex-row items-center">
+                <img src="../static/images/logo.jpg" class="rounded-full w-14 h-14"> 
+                <h1 class="text-white mx-3">Tvacha</h1>
+            </div>
+
+            <div class="hidden md:flex flex-row items-center">
+                <!-- NavBar -->
+                <div class="mr-9">
+                    <ul class="flex flex-row space-x-9 text-white">
+                        <li class="p-2 rounded hover:bg-[#F9D0BE] hover:text-black"><a href="/" >Home</a></li>
+                        <li class="p-2 rounded hover:bg-[#F9D0BE] hover:text-black"><a href="/Appoint">Book an Appointment</a></li>
+                        <li class="p-2 rounded hover:bg-[#F9D0BE] hover:text-black"><a href="/Test" >Take The Test</a></li>
+                        <li class="p-2 rounded hover:bg-[#F9D0BE] hover:text-black"><a href="" ><form action="/Donate" method="post"><button type="submit">Donate Us</button></form> </a></li>
+                    </ul>
+                </div>
+                <!-- Login Button -->
+                <div>
+                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="hover:text-white text-black bg-[#F9D0BE]  font-medium rounded p-2 text-center inline-flex items-center " >
+                        Login 
+                        <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdown"class="absolute hidden mt-2 rounded bg-[#F9D0BE]">
+                        <ul class="py-1 text-sm" aria-labelledby="dropdownDefaultButton">
+                        <li>
+                            <a href="/DLogin" class="hover:text-white block px-4 py-2 text-black">Doctor Login</a>
+                        </li>
+                        <hr>
+                        <li>
+                            <a href="/PLogin" class="hover:text-white block px-4 py-2 text-black">User Login</a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mx-5">
+                    <button id="dropdownDefaultButton1" data-dropdown-toggle="dropdown1" class="hover:text-white text-black bg-[#F9D0BE]  font-medium rounded p-2 text-center inline-flex items-center " >
+                        Register
+                        <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdown1" class="absolute hidden mt-2 rounded bg-[#F9D0BE]">
+                        <ul class="py-1 text-sm" aria-labelledby="dropdownDefaultButton">
+                        <li>
+                            <a href="/DRegister" class="hover:text-white block px-4 py-2 text-black">Doctor Register</a>
+                        </li>
+                        <hr>
+                        <li>
+                            <a href="/PRegister" class="hover:text-white block px-4 py-2 text-black">User Register</a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex flex-row items-center h-12 w-12">
+                <button class="p-2 bg-[#F9D0BE] rounded mobile-menu-button">
+                    <img src="../static/images/mobile-menu-icon.png" class="w-4 h-4">
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile NavBar -->
+        <div class="hidden mobile-menu md:hidden bg-[#F9D0BE]">
+            <ul class=" text-center py-1">
+                <li class="p-2 ml-12 mr-12 bg-[#f56556] m-1 rounded"><a class=" text-white hover:text-black" href="/">Home</a></li>
+                <li class="p-2 ml-12 mr-12 bg-[#f56556] m-1 rounded"><a class=" text-white hover:text-black" href="/Appointment">Book an Appointment</a></li>
+                <li class="p-2 ml-12 mr-12 bg-[#f56556] m-1 rounded"><a class=" text-white hover:text-black" href="/test">Take Test</a></li>
+                <li class="p-2 ml-12 mr-12 bg-[#f56556] m-1 rounded"><a class=" text-white hover:text-black" href="/Donate">Donate</a></li>
+                <li class="p-2 ml-12 mr-12 bg-[#f56556] m-1 rounded"><a class=" text-white hover:text-black" href="/Login">Login</a></li>
+            </ul>
+        </div>
+
+        <script>
+            const btn = document.querySelector("button.mobile-menu-button");
+            const menu = document.querySelector(".mobile-menu");
+            const dropdownBtn = document.querySelector("#dropdownDefaultButton");
+            const dropdownMenu = document.querySelector("#dropdown");
+            btn.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+            });
+            dropdownBtn.addEventListener("click", ()=>{
+                dropdownMenu.classList.toggle("hidden");
+            })
+        </script>
+    </nav>
+
+        <div class="flex flex-col lg:flex-row items-center justify-center bg-[#fcbd58] py-8 px-4 lg:px-24">
+            <div class="lg:w-1/2 lg:pr-12">
+              <h2 class="text-3xl font-bold ml-4 text-black mb-4">Know the root cause of your skin disease</h2>
+              <button class="bg-black p-5 text-white rounded hover:bg-gray-200 hover:text-black">
+                Take The Test
+                </button>
+            </div>
+            <div class="lg:w-1/2">
+              <img src="../static/images/home.png" alt="Your image description" class="h-64 lg:h-auto">
+            </div>
+        </div>
+   
+    </div>  
+</div>
+
+    <!-------------------------------------------- Section-2 ----------------------------------------->
+    <!-- For Small Screens => Slider -->
+    
+    <div id="default-carousel" class="relative md:hidden mt-10" data-carousel="slide">
+        <div class="relative h-64 overflow-hidden rounded-lg">
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <div class="flex flex-col items-center">
+                    <img src="../static/images/Nutrition.jpg" class="absolute block h-32 w-32 top-24 -translate-x-1/2 -translate-y-1/2 left-1/2" alt="...">
+                    <h1 class="absolute text-xl font-bold">Nutrition</h1>
+                    <p class="absolute top-40 text-center font-semibold">Nutrient deficiencies result from poor <br>diet or a compromised gut microbiome.</p>
+                </div>
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <div class="flex flex-col items-center">
+                    <img src="../static/images/Metabolism.jpg" class="absolute block h-32 w-32 top-24 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <h1 class="absolute text-xl font-bold">Metabolism</h1>
+                    <p class="absolute top-40 text-center font-semibold">Influenced by inflamation, highglycemic<br> diet and thyroid issues.</p>
+                </div>
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <div class="flex flex-col items-center">
+                    <img src="../static/images/hormones.jpg" class="absolute block h-32 w-32 top-24 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <h1 class="absolute text-xl font-bold">Hormones</h1>
+                    <p class="absolute top-40 text-center font-semibold">DHT sensitivity can be caused by genetics, <br>stress, meds, poor diet and toxins.</p>
+                </div>
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <div class="flex flex-col items-center">
+                    <img src="../static/images/stress.jpg" class="absolute block h-32 w-32 top-24 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <h1 class="absolute text-xl font-bold">Stress</h1>
+                    <p class="absolute top-40 text-center font-semibold">Short term or chronic, physical or emotional <br>stress like a surgery or demanding job.</p>
+                </div>
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <div class="flex flex-col items-center">
+                    <img src="../static/images/Environment.jpg" class="absolute block h-32 w-32 top-24 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <h1 class="absolute text-xl font-bold">Environment</h1>
+                    <p class="absolute top-40 text-center font-semibold">Refers to your surroundings, the product <br>you use and the foods that you eat.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider indicators -->
+
+        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+        </div>
+
+        <!-- Slider controls -->
+
+        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+
+    <!-- For Large Screens => Image -->
+
+    <div class="hidden md:block w-full mt-10">
+        <h1 class="font-extrabold text-center md:text-3xl">Skin Diseases has Multiple Causes</h1>
+        <img src="../static/images/skinProblemsCause.jpg" alt="skin Problems Cause">
+    </div>
+
+    <!-------------------------------------------- Journey Section ----------------------------------------->
+
+<section class="bg-[#fcbd58] p-5 mt-8">
+    <h1 class="text-center font-extrabold text-3xl mb-5">The Journey</h1>
+    <div class="m-5 flex flex-col justify-center md:flex-row gap-10">
+        <div class="p-5 rounded-xl flex flex-row bg-white justify-between md:flex-col shadow-2xl">
+            <div class="flex flex-col md:gap-8">
+                <div class="font-extrabold text-2xl">Take the Test</div>
+                <div class="font-semibold text-lg">An online test that accesses <br>the root cause of your skin <br>disease</div>
+            </div>
+            <div class="flex flex-col justify-between items-center md:flex-row">
+                <div class=""><img class="rounded-full w-28 h-24 p-3" src="../static/images/test.jpg" alt=""></div>
+                <div class="font-semibold text-xl">Step 1</div>
+            </div>
+        </div>
+        <div class="p-5 rounded-xl flex flex-row bg-white justify-between md:flex-col  shadow-2xl">
+            <div class="flex flex-col md:gap-1">
+                <div class="font-extrabold text-2xl">Book <br>Appointment</div>
+                <div class="font-semibold text-lg">Understand your skin disease <br>and take doctors plan</div>
+            </div>
+            <div class="flex flex-col justify-between items-center md:flex-row">
+                <div class=""><img class="rounded-full w-28 h-24 p-3" src="../static/images/doctor.png" alt=""></div>
+                <div class="font-semibold text-xl">Step 2</div>
+            </div>
+        </div>
+        <div class="p-5 rounded-xl flex flex-row  bg-white justify-between md:flex-col shadow-2xl">
+            <div class="flex flex-col md:gap-1">
+                <div class="font-extrabold text-2xl">Start Healing <br>the Skin</div>
+                <div class="font-semibold text-lg">Take Medicine and <br>follow the doctors plan</div>
+            </div>
+            <div class="flex flex-col justify-between items-center md:flex-row">
+                <div class=""><img class="rounded-full w-28 h-24 p-3" src="../static/images/medicine.jpg" alt=""></div>
+                <div class="font-semibold text-xl">Step 3</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-------------------------------------------- Threefold Way Section ----------------------------------------->
+    <div class="flex flex-col p-5 justify-center items-center w-full">
+        <h1 class="text-center font-extrabold text-4xl mt-10">The Threefold Way</h1>
+        <p class="text-center font-semibold text-xl mt-10">Summon Everyone in one Platform</p>
+        <h1 class="text-center font-semibold text-2xl mt-8"> Doctors <span class="text-green-500">+</span> Patients <span class="text-green-500">+</span> Donators </h1>
+        <p class="text-center font-semibold text-xl m-10 p-4 md:w-1/2  md:h-20">Our Platform brings together all the three parties together which makes the process of treatment seamless.</p>
+    </div>
+
+    
+    <!---------------------------------------- Donation Section --------------------------------------->
+<div class="bg-[#fcbd58] p-5">
+    <h1 class="mt-10 text-center font-extrabold text-black text-3xl">DONATE</h1>
+    <section class="container mx-auto p-10 md:py-10 px-0 md:p-10 md:px-0">
+        <section class="p-5 md:p-0 flex flex-col justify-around gap-10 md:flex-row">
+            <!-- First Card -->
+
+            <div  class="min-h-96 max-w-xl w-full rounded-xl transform bg-white duration-500 hover:-translate-y-1 cursor-pointer shadow-lg">
+               <img src="../static/images/test.jpg" alt="donation">
+            </div>
+
+            <!-- Second Card -->
+
+            <article class="min-h-116 bg-orange-600 max-w-xl w-full rounded-xl text-gray-100 bg-cover bg-center transform duration-500 hover:-translate-y-1 cursor-pointer shadow-lg" style="background-image: url(./assets/donation2.jpg);">
+                <div class="bg-black bg-opacity-60 p-10 rounded-xl h-full">
+                    <h1 class="mt-5 text-3xl text-gray-100 leading-snug  min-h-33">Alone we can do so little; together we can do so much
+                    </h1>
+                    <div class="ml-20 mt-10">
+                        <span class="text-xl">-</span>
+                        <span class="font-bold text-xl">HELEN KELLER</span>
+                    </div>
+                    <div class="mt-16 flex justify-between ">
+                        <span class="p-3 pl-0 font-bold"></span>
+                        <div class="p-3 border-2 border-gray-200 rounded-md text-base bg-green-400 text-black hover:bg-gray-200 hover:border-gray-200 cursor-pointer hover:text-black">
+                           <form action="/Donate" method="post">
+                                 <button type="submit">Donate Now</button>
+                           </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </section>
+</div>
+
+
+    <!-------------------------------------------- Youtube Video Section ----------------------------------------->
+    <div style="overflow: hidden; overflow-x: auto; " class="scrollbar-hide ">
+        <div class="flex flex-row md:gap-5 m-10 ml-2">
+            <div class="p-2">
+                <iframe width="300" 
+                        height="200" 
+                        class="rounded-lg"
+                        src="https://www.youtube.com/embed/zQGOcOUBi6s" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>         
+            </div>
+            <div class="p-2">
+                <iframe width="300" 
+                        height="200" 
+                        class="rounded-lg "
+                        src="https://www.youtube.com/embed/ryox2SQKQPU" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="p-2">
+                <iframe width="300" 
+                        height="200" 
+                        class="rounded-lg"
+                        src="https://www.youtube.com/embed/Qa7WrWNmXug" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="p-2">
+                <iframe width="300" 
+                        height="200" 
+                        class="rounded-lg"
+                        src="https://www.youtube.com/embed/_VhcZTGv0CU" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="p-2">
+                <iframe width="300" 
+                        height="200" 
+                        class="rounded-lg"
+                        src="https://www.youtube.com/embed/Dx3iF8-nmkM" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="p-2">
+                <iframe width="300" 
+                        height="200" 
+                        class="rounded-lg"
+                        src="https://www.youtube.com/embed/oXKRCG-3z9k" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>            
+            </div>
+            
+        </div>
+    </div>
+
+
+    <!------------------------------------------------- ChatBot ----------------------------------------------->
+    <!-- <button onclick="buttonHandler()" id="chatButton" title="Chat Bot"
+        class="fixed z-90 bottom-10 right-8 bg-blue-600 w-20 h-20 rounded-full drop-shadow-lg flex justify-center items-center text-white text-4xl hover:bg-blue-700 hover:drop-shadow-2xl hover:animate-bounce duration-300">
+        <img src="../static/images/chatbot.jpg" alt="chatbot" class="rounded-full">
+        <a href="./bookAppointment.html" ></a>
+    </button>
+    <script>
+        // Do something when the button is clicked
+        function buttonHandler() {
+            // window.location.href = "./bookAppointment.html"
+            const chatBtn = document.querySelector("#chatButton")
+            const backBtn = document.querySelector("#backButton")
+            const chat = document.querySelector("#default-sidebar")
+            
+            //For Chat Bot Button
+            chatBtn.addEventListener("click", () => {
+                chat.classList.toggle("hidden");
+            });
+            //For Back Button
+            backBtn.addEventListener("click",()=>{
+                chat.classList.toggle("hidden");
+            })
+            
+        }   
+    </script> -->
+
+    <!-- Chat Bot Section -->
+    <aside id="default-sidebar" class="hidden fixed top-0 left-0 z-40 w-64 h-screen transition-transform sm:translate-x-0" aria-label="Sidebar">
+        <div class="container">
+            <div class="chatbox">
+                <div class="chatbox__support">
+                    <div class="chatbox__header">
+                        <div class="chatbox__image--header">
+                            <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+                        </div>
+                        <div class="chatbox__content--header">
+                            <h4 class="chatbox__heading--header">Chat support</h4>
+                            <p class="chatbox__description--header">Hi! How can I help you?</p>
+                        </div>
+                    </div>
+                    <div class="chatbox__messages">
+                        <div></div>
+                    </div>
+                    <div class="chatbox__footer">
+                        <input type="text" placeholder="Write a message...">
+                        <button class="chatbox__send--footer send__button">Send</button>
+                    </div>
+                </div>
+                <div class="chatbox__button">
+                    <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
+                </div>
+            </div>
+        </div>
+        
+    </aside>
+
+
+    <!------------------------------------------------- Footer ----------------------------------------------------->
+    <footer class="p-4 sm:p-6 bg-[#f56556]">
+        <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+                <a href="https://flowbite.com/" class="flex items-center">
+                    <img src="../static/images/logo.jpg" class="h-8 mr-3 rounded-full" alt="Logo" />
+                    <span class="self-center text-2xl font-semibold text-black whitespace-nowrap dark:text-white">Tvacha</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-black uppercase dark:text-white">Resources</h2>
+                    <ul class="text-black dark:text-black">
+                        <li class="mb-4">
+                            <a href="https://flowbite.com/" class="hover:underline">Access</a>
+                        </li>
+                        <li>
+                            <a href="https://tailwindcss.com/" class="hover:underline">Tests</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-black uppercase dark:text-white">Contact us</h2>
+                    <ul class="text-black dark:text-black">
+                        <li class="mb-4">
+                            <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Whatsapp</a>
+                        </li>
+                        <li>
+                            <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Gmail</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-black uppercase dark:text-white">Legal</h2>
+                    <ul class="text-black dark:text-black">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="my-6 border-black sm:mx-auto dark:border-black lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-black">© 2023 <a href="#" class="hover:underline">Tvacha™</a>. All Rights Reserved.
+            </span>
+            <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                <a href="#" class="text-black hover:text-black dark:hover:text-white">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                    <span class="sr-only">Facebook page</span>
+                </a>
+                <a href="#" class="text-black hover:text-black dark:hover:text-white">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                    <span class="sr-only">Instagram page</span>
+                </a>
+                <a href="#" class="text-black hover:text-black dark:hover:text-white">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                    <span class="sr-only">Twitter page</span>
+                </a>
+                <a href="#" class="text-black hover:text-black dark:hover:text-white">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                    <span class="sr-only">GitHub account</span>
+                </a>
+                <a href="#" class="text-black hover:text-black dark:hover:text-white">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd" /></svg>
+                    <span class="sr-only">Dribbbel account</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        $SCRIPT_ROOT = {{ request.script_root|tojson }};
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+  
+</body>
+</html>

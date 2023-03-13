@@ -1,0 +1,229 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey","Hii",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting. What are you looking for?",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "Thanks for visiting",
+        "Have a nice day",
+        "Bye!"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "service",
+      "patterns": [
+        "What services do you have?",
+        "What kinds of services are there?",
+        "What do you sell?"
+      ],
+      "responses": [
+        "We provide healthcare service regarding skin disease specialists",
+        "We have coffee and tea"
+      ]
+    },
+    {
+      "tag": "payments",
+      "patterns": [
+        "Do you take credit cards?",
+        "Do you accept Mastercard?",
+        "Can I pay with Paypal?",
+        "Are you cash only?"
+      ],
+      "responses": [
+        "We accept VISA, Mastercard and Paypal",
+        "We accept most major credit cards, and Paypal"
+      ]
+    },
+    {
+      "tag": "scar",
+      "patterns": [
+        "How long does scars take to recover?",
+        "How long will it take to dissapear a scar due to cut?"
+      ],
+      "responses": [
+        "It depends on the deepness of the cut or wound, generally scars which are fresh and taken care properly with medicine disappears within a week or two.",
+        "It depends on type of scar, if it's deep visiting a doctor will help."
+      ]
+    },
+    {
+      "tag": "skin disease",
+      "patterns": [
+        "What kind of skin disese cause redness?",
+        "Tell me something how to treat redness of skin?",
+        "What should I do I am having skin disease?"
+      ],
+      "responses": [
+        "Recommended to look for a deratalogist, please go through our website. We would love to help you.",
+        "Please visit our website and visit a naerby dermatologist. We wish you a speedy recovery."
+      ]
+    },
+    {
+      "tag": "dermatitis",
+      "patterns": [
+        "What is dermatitis?",
+        "What are the different types of dermatitis?"
+    ],
+      "responses": [
+        "Dermatitis is a skin condition that causes redness, itching, and inflammation",
+        "The different types of dermatitis include contact dermatitis, atopic dermatitis, and seborrhe"
+      ]
+    },
+    {
+      "tag": "acne",
+      "patterns": [
+        "What is acne",
+        "What are the causes of acne",
+        "How is acne treated"
+    ],
+      "responses": [
+        "Acne is a skin condition that causes pimples, blackheads, and whiteheads on the skin.",
+        "Acne is caused by a combination of factors, including excess oil production, clogged pores, and bacteria",
+        "Acne can be treated with topical creams and ointments, oral medications, and lifestyle changes."
+      ]
+    },
+    {
+      "tag": "rosacea",
+      "patterns": [
+        "What is rosacea?",
+        "What are the symptoms of rosacea?",
+        "What causes rosacea?",
+        "How is rosacea treated?"
+    ],
+      "responses": [
+        "Rosacea is a skin condition that causes redness and bumps on the face.",
+        "The symptoms of rosacea can include redness, bumps, and swelling on the face, as well as a burning or stinging sensation.",
+        "The exact cause of rosacea is unknown, but it may be related to genetics and environmental factors.",
+        "Rosacea can be treated with topical creams and ointments, oral medications, and laser therapy."
+      ]
+    },
+    {
+      "tag": "psoriasis",
+      "patterns": [
+        "What is psoriasis?",
+        "What are the symptoms of psoriasis?",
+        "What causes psoriasis?",
+        "How is psoriasis treated?"
+    ],
+      "responses": [
+        "Psoriasis is a skin condition that causes red, scaly patches on the skin.",
+        "The symptoms of psoriasis can include red, scaly patches on the skin, itching, and pain.",
+        "Psoriasis is believed to be caused by an overactive immune system.",
+        "Psoriasis can be treated with topical creams and ointments, oral medications, and light therapy"
+      ]
+    },
+    {
+      "tag": "eczema",
+      "patterns": [
+        "How is eczema treated?",
+        "What is eczema?",
+        "What causes eczema?",
+        "What are the different types of eczema?"
+    ],
+      "responses": [
+        "Eczema can be treated with topical creams and ointments, oral medications, and lifestyle changes.",
+        "Eczema is a skin condition that causes red, itchy, and inflamed patches on the skin.",
+        "Eczema can be caused by a variety of factors, including genetics, environmental factors, and allergies.",
+        "The different types of eczema include atopic dermatitis, contact dermatitis, nummular dermatitis, and seborrheic dermatitis."
+      ]
+    },
+    {
+      "tag": "ringworm",
+      "patterns": [
+        "What is ringworm?",
+        "What are the symptoms of ringworm?",
+        "What causes ringworm?",
+        "How is ringworm treated?"
+    ],
+      "responses": [
+        "Ringworm is a fungal infection that causes a circular rash on the skin.",
+        "The symptoms of ringworm can include a circular rash with a raised, red border and a clear center.",
+        "Ringworm is caused by a fungal infection.",
+        "Ringworm can be treated with antifungal medications and topical creams."
+      ]
+    },
+    {
+      "tag": "impetigo",
+      "patterns": [
+        "What is impetigo?",
+        "What are the symptoms of impetigo?",
+        "What causes impetigo?",
+        "How is impetigo treated?"
+    ],
+      "responses": [
+        "Impetigo is a bacterial infection that causes sores and blisters on the skin.",
+        "The symptoms of impetigo can include red sores, blisters, and oozing.",
+        "Impetigo is caused by a bacterial infection, often occurring in areas of broken skin.",
+        "Impetigo can be treated with topical or oral antibiotics."
+      ]
+    },
+    {
+      "tag": "hives",
+      "patterns": [
+        "What are the symptoms of hives?",
+        "What causes hives?",
+        "How are hives treated?"   
+    ],
+      "responses": [
+        "The symptoms of hives include red, itchy, and raised welts on the skin.",
+        "Hives can be caused by a variety of factors, including allergies, infections, and stress.",
+        "Hives can be treated with antihistamines and other medications."      
+      ]
+    },
+    {
+      "tag": "skin cancer",
+      "patterns": [
+        "What is the most common type of skin cancer?",
+        "What are the symptoms of skin cancer?",
+        "How can skin cancer be prevented?",
+        "What is melanoma?",
+        "Can skin diseases be contagious?"
+    ],
+      "responses": [
+        "The most common type of skin cancer is basal cell carcinoma.",
+        "The symptoms of skin cancer can include changes in the appearance of moles or other spots on the skin, new growths on the skin, and sores that don't heal.",
+        "Skin cancer can be prevented by wearing protective clothing, using sunscreen, avoiding tanning beds, and limiting exposure to the sun during peak hours.",
+        "Melanoma is a type of skin cancer that develops in melanocytes, the cells that produce pigment in the skin.",
+        "Some skin diseases can be contagious, such as ringworm, scabies, and impetigo."
+      ]
+    },
+    {
+      "tag": "shingles",
+      "patterns": [
+        "What is shingles?",
+        "What are the symptoms of shingles?",
+        "What causes shingles?",
+        "How is shingles treated?"
+      ],
+      "responses": [
+        "Shingles is a viral infection that causes a painful rash on the skin.",
+        "The symptoms of shingles can include a painful rash, blisters, and fever.",
+        "Shingles is caused by the same virus that causes chickenpox, and can reactivate in later life.",
+        "Shingles can be treated with antiviral medications and pain relievers."
+      ]
+    }
+
+
+  ]
+}
